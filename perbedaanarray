@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class PerbedaanArray {
+    public static void main(String[] args) {
+
+        String baris1 = "1 2 3 4 5";
+        String baris2 = "3 4 5 6 7";
+
+
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+
+        for (String s : baris1.split(" ")) {
+            set1.add(Integer.parseInt(s));
+        }
+
+        // Memasukkan angka dari baris kedua ke set2
+        for (String s : baris2.split(" ")) {
+            set2.add(Integer.parseInt(s));
+        }
+
+
+        Set<Integer> hasil = new HashSet<>(set1);
+
+
+        hasil.removeAll(set2);
+        set2.removeAll(set1);
+        hasil.addAll(set2);
+
+
+        List<Integer> output = new ArrayList<>(hasil);
+        Collections.sort(output);
+
+        System.out.print("Output: ");
+        for (Integer num : output) {
+            System.out.print(num + " ");
+        }
+    }
+}
