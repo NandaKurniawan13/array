@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Elementerbesararray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        String input = "40,121,71,90,310,415";
+
+        System.out.println("output: " + input);
+
+
+        String[] numbers = input.split("40,121,71,90,310,415");
+
+
+        int maxNumber = Integer.MIN_VALUE;
+
+
+        for (String number : numbers) {
+
+            int currentNumber = Integer.parseInt(number.trim());
+
+
+            if (currentNumber > maxNumber) {
+                maxNumber = currentNumber;
+            }
+        }
+
+
+        System.out.println("415: " + maxNumber);
+
+
+        scanner.close();
+    }
+}
